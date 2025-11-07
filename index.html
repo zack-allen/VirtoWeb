@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>VirtoWeb — Local multi-language website generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="VirtoWeb: local, developer-first generator that converts a unified JSON schema into runnable projects for PHP, Node, Python/Flask and static HTML." />
+  </head>
+  <body class="bg-gray-50 text-gray-900 antialiased">
+    <header class="bg-white border-b">
+      <div class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-sky-400 rounded-md flex items-center justify-center text-white font-bold">VW</div>
+          <div>
+            <h1 class="text-lg font-semibold">VirtoWeb</h1>
+            <p class="text-sm text-gray-500">Local, multi-language website code generator</p>
+          </div>
+        </div>
+        <nav class="flex items-center gap-4">
+          <a class="text-sm text-sky-600 hover:underline" href="README.md">Docs</a>
+          <a class="text-sm text-sky-600 hover:underline" href="builders/desktop_builder/README.md">Builder</a>
+          <a class="text-sm text-sky-600 hover:underline" href="examples/example_layout_site.json">Examples</a>
+          <a class="text-sm text-gray-600 hover:underline" href="https://github.com/zack-allen/VirtoWeb" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12">
+      <section class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-4xl font-extrabold leading-tight">Generate full, runnable website projects from a single JSON schema</h2>
+          <p class="mt-4 text-lg text-gray-600">Author your site once with a unified JSON schema and produce self-hostable projects in PHP, Node (Express), Python (Flask) or plain static HTML/CSS/JS. VirtoWeb keeps templates and output predictable and dependency-light.</p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a class="inline-flex items-center gap-2 px-4 py-2 bg-sky-600 text-white rounded shadow hover:bg-sky-700" href="README.md">Get started</a>
+            <a class="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 rounded hover:bg-gray-50" href="builders/desktop_builder/README.md">Try the desktop builder</a>
+            <a class="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 rounded hover:bg-gray-50" href="generators/README.md">Generator reference</a>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="p-4 bg-white rounded shadow-sm">
+              <h3 class="font-semibold">Single source of truth</h3>
+              <p class="text-sm text-gray-600 mt-2">Pages, components, layouts, forms and assets described in a single JSON schema.</p>
+            </div>
+            <div class="p-4 bg-white rounded shadow-sm">
+              <h3 class="font-semibold">Multi-language outputs</h3>
+              <p class="text-sm text-gray-600 mt-2">Generate projects for PHP, Node.js (Express), Python (Flask), or static HTML with consistent structure.</p>
+            </div>
+            <div class="p-4 bg-white rounded shadow-sm">
+              <h3 class="font-semibold">Local-first tooling</h3>
+              <p class="text-sm text-gray-600 mt-2">Run everything locally — generator, CLI, and the desktop builder. No hosting required to generate code.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border rounded-lg p-6 shadow-sm">
+          <h4 class="font-semibold">Quick commands</h4>
+          <pre class="mt-4 p-4 bg-gray-100 rounded text-sm overflow-x-auto"><code>python -m venv .venv
+.\.venv\Scripts\Activate.ps1  # Windows PowerShell
+pip install -r generators/static_generator/requirements.txt
+python -c "from generators.core.generator import generate; generate('examples/example_layout_site.json')"</code></pre>
+
+          <h4 class="font-semibold mt-6">Try it</h4>
+          <p class="text-sm text-gray-600 mt-2">Generate the example static site and open <code>dist/static-example/index.html</code>.</p>
+        </div>
+      </section>
+
+      <section class="mt-12">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-2xl font-bold">Getting involved</h3>
+          <p class="mt-3 text-gray-600">VirtoWeb is open-source. Contributions welcome: add templates, backends, editor integrations, or improve the builder and CLI.</p>
+
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="p-4 border rounded">
+              <h4 class="font-semibold">Docs</h4>
+              <p class="text-sm text-gray-600 mt-2">Read the schema spec in <a class="text-sky-600" href="docs/schema_v1.md">docs/schema_v1.md</a>.</p>
+            </div>
+            <div class="p-4 border rounded">
+              <h4 class="font-semibold">Desktop Builder</h4>
+              <p class="text-sm text-gray-600 mt-2">Visual editor prototype: <a class="text-sky-600" href="builders/desktop_builder/README.md">builders/desktop_builder</a>.</p>
+            </div>
+            <div class="p-4 border rounded">
+              <h4 class="font-semibold">Examples</h4>
+              <p class="text-sm text-gray-600 mt-2">Find example schemas under <a class="text-sky-600" href="examples">examples/</a>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="mt-12 text-center text-sm text-gray-500">
+        <p>Made with ❤️ — VirtoWeb. View on <a class="text-sky-600" href="https://github.com/zack-allen/VirtoWeb" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+      </footer>
+    </main>
+  </body>
+</html>
