@@ -1,0 +1,156 @@
+{
+  "project": {
+    "id": "example-landing",
+    "title": "Example Landing",
+    "description": "A small landing page demonstrating layouts and components",
+    "version": "1.0.0",
+    "basePath": "/"
+  },
+  "layouts": {
+    "main": {
+      "id": "main",
+      "title": "Main layout",
+      "template": "layouts/main",
+      "regions": [
+        "head",
+        "header",
+        "main",
+        "footer"
+      ],
+      "props": {
+        "siteTitle": "Example Landing"
+      },
+      "default": true
+    }
+  },
+  "components": {
+    "nav": {
+      "id": "nav",
+      "type": "nav",
+      "template": "components/nav",
+      "props": {
+        "links": [
+          {
+            "title": "Home",
+            "href": "/"
+          },
+          {
+            "title": "Contact",
+            "href": "/contact"
+          }
+        ]
+      }
+    },
+    "hero": {
+      "id": "hero",
+      "type": "hero",
+      "template": "components/hero",
+      "props": {
+        "headline": "Welcome to Example Landing",
+        "sub": "Built with VirtoWeb"
+      }
+    },
+    "content": {
+      "id": "content",
+      "type": "static",
+      "template": "components/content",
+      "props": {
+        "html": "<p>This is a sample content block.</p>"
+      }
+    },
+    "contactForm": {
+      "id": "contactForm",
+      "type": "form",
+      "template": "components/contact_form",
+      "props": {
+        "formId": "contact"
+      }
+    }
+  },
+  "pages": [
+    {
+      "id": "home",
+      "route": "/",
+      "title": "Home",
+      "layout": "main",
+      "regions": {
+        "header": [
+          {
+            "component": "nav"
+          }
+        ],
+        "main": [
+          {
+            "component": "hero"
+          },
+          {
+            "component": "content"
+          }
+        ],
+        "footer": [
+          {
+            "component": "content",
+            "props": {
+              "html": "<small>\u00a9 2025 Example</small>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "contact",
+      "route": "/contact",
+      "title": "Contact",
+      "layout": "main",
+      "regions": {
+        "header": [
+          {
+            "component": "nav"
+          }
+        ],
+        "main": [
+          {
+            "component": "contactForm"
+          }
+        ],
+        "footer": [
+          {
+            "component": "content",
+            "props": {
+              "html": "<small>Contact footer</small>"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "forms": {
+    "contact": {
+      "id": "contact",
+      "action": "/api/contact",
+      "method": "POST",
+      "csrf": true,
+      "fields": [
+        {
+          "name": "name",
+          "type": "text",
+          "label": "Your name",
+          "required": true
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true
+        },
+        {
+          "name": "message",
+          "type": "textarea",
+          "label": "Message",
+          "required": true
+        }
+      ]
+    }
+  },
+  "assets": []
+}

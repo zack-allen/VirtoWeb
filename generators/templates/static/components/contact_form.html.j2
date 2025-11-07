@@ -1,0 +1,6 @@
+<form action="{{ props.action or '/api/contact' }}" method="post">
+  <label>{{ props.label_name or 'Name' }}<input name="name" type="text"></label>
+  <label>{{ props.label_email or 'Email' }}<input name="email" type="email"></label>
+  <label>{{ props.label_message or 'Message' }}<textarea name="message"></textarea></label>
+  <button type="submit">Send</button>
+</form>
